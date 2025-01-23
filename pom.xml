@@ -20,7 +20,7 @@
         <!--=== GENERAL / DSPACE-API DEPENDENCIES ===-->
         <java.version>17</java.version>
         <spring.version>6.2.2</spring.version>
-        <spring-boot.version>3.4.1</spring-boot.version>
+        <spring-boot.version>3.4.2</spring-boot.version>
         <spring-security.version>6.4.2</spring-security.version> <!-- sync with version used by spring-boot-->
         <hibernate.version>6.4.8.Final</hibernate.version>
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
@@ -1712,12 +1712,6 @@
                 <artifactId>h2</artifactId>
                 <version>2.3.232</version>
                 <scope>test</scope>
-            </dependency>
-            <!-- Google Analytics -->
-            <dependency>
-                <groupId>com.google.apis</groupId>
-                <artifactId>google-api-services-analytics</artifactId>
-                <version>v3-rev145-1.23.0</version>
             </dependency>
 
             <!-- Findbugs annotations -->
