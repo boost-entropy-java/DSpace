@@ -1345,7 +1345,7 @@
             <dependency>
                 <groupId>org.checkerframework</groupId>
                 <artifactId>checker-qual</artifactId>
-                <version>3.48.4</version>
+                <version>3.49.0</version>
             </dependency>
 
             <!-- Several dependencies disagree on version of GSON including Jena, Google-OAuth-Client
@@ -1538,11 +1538,6 @@
                 <groupId>commons-validator</groupId>
                 <artifactId>commons-validator</artifactId>
                 <version>1.9.0</version>
-            </dependency>
-            <dependency>
-                <groupId>joda-time</groupId>
-                <artifactId>joda-time</artifactId>
-                <version>2.13.0</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.activation</groupId>
@@ -1803,13 +1798,6 @@
                 <groupId>jakarta.annotation</groupId>
                 <artifactId>jakarta.annotation-api</artifactId>
                 <version>${jakarta-annotation.version}</version>
-            </dependency>
-            <!-- mockito-inline and hibernate-ehcache pull in different versions of byte-buddy. Specify which we want. -->
-            <!-- TODO: We might be able to remove this after hibernate-ehcache is replaced by hibernate-jcache -->
-            <dependency>
-                <groupId>net.bytebuddy</groupId>
-                <artifactId>byte-buddy</artifactId>
-                <version>1.16.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
