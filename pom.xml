@@ -20,8 +20,8 @@
         <!--=== GENERAL / DSPACE-API DEPENDENCIES ===-->
         <java.version>17</java.version>
         <spring.version>6.2.6</spring.version>
-        <spring-boot.version>3.4.4</spring-boot.version>
-        <spring-security.version>6.4.4</spring-security.version> <!-- sync with version used by spring-boot-->
+        <spring-boot.version>3.4.5</spring-boot.version>
+        <spring-security.version>6.4.5</spring-security.version> <!-- sync with version used by spring-boot-->
         <hibernate.version>6.4.8.Final</hibernate.version>
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
         <postgresql.driver.version>42.7.5</postgresql.driver.version>
@@ -31,8 +31,8 @@
         <ehcache.version>3.10.8</ehcache.version>
         <errorprone.version>2.38.0</errorprone.version>
         <!-- NOTE: when updating jackson.version, also sync jackson-databind.version below -->
-        <jackson.version>2.18.3</jackson.version>
-        <jackson-databind.version>2.18.3</jackson-databind.version>
+        <jackson.version>2.19.0</jackson.version>
+        <jackson-databind.version>2.19.0</jackson-databind.version>
         <jakarta-annotation.version>2.1.1</jakarta-annotation.version>
         <jaxb-api.version>4.0.2</jaxb-api.version>
         <jaxb-runtime.version>4.0.5</jaxb-runtime.version>
@@ -40,7 +40,7 @@
         <!-- NOTE: Jetty needed for Solr, Handle Server & tests -->
         <jetty.version>9.4.57.v20241219</jetty.version>
         <log4j.version>2.24.3</log4j.version>
-        <pdfbox-version>2.0.33</pdfbox-version>
+        <pdfbox-version>2.0.34</pdfbox-version>
         <rome.version>1.19.0</rome.version>
         <!-- SLF4J is not used, but specified for dependency convergence issues between many dependencies -->
         <slf4j.version>2.0.17</slf4j.version>
@@ -299,7 +299,7 @@
                         <dependency>
                             <groupId>com.puppycrawl.tools</groupId>
                             <artifactId>checkstyle</artifactId>
-                            <version>10.23.0</version>
+                            <version>10.23.1</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -1391,7 +1391,7 @@
             <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
-                <version>2.13.0</version>
+                <version>2.13.1</version>
             </dependency>
 
             <!-- Reminder: Keep icu4j (in Parent POM) synced with version used by lucene-analyzers-icu below,
@@ -1516,7 +1516,7 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
-                <version>4.4</version>
+                <version>4.5.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
