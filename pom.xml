@@ -23,7 +23,7 @@
         <spring-boot.version>3.5.0</spring-boot.version>
         <spring-security.version>6.5.0</spring-security.version> <!-- sync with version used by spring-boot-->
         <hibernate.version>6.4.8.Final</hibernate.version>
-        <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
+        <hibernate-validator.version>8.0.2.Final</hibernate-validator.version>
         <postgresql.driver.version>42.7.6</postgresql.driver.version>
         <flyway.version>10.22.0</flyway.version>
         <solr.client.version>8.11.4</solr.client.version>
@@ -1383,7 +1383,7 @@
             <dependency>
                 <groupId>org.checkerframework</groupId>
                 <artifactId>checker-qual</artifactId>
-                <version>3.49.3</version>
+                <version>3.49.4</version>
             </dependency>
 
             <!-- Several dependencies disagree on version of GSON including Jena, Google-OAuth-Client
