@@ -19,11 +19,11 @@
     <properties>
         <!--=== GENERAL / DSPACE-API DEPENDENCIES ===-->
         <java.version>17</java.version>
-        <spring.version>6.2.9</spring.version>
-        <spring-boot.version>3.5.4</spring-boot.version>
-        <spring-security.version>6.5.2</spring-security.version> <!-- sync with version used by spring-boot-->
+        <spring.version>6.2.10</spring.version>
+        <spring-boot.version>3.5.5</spring-boot.version>
+        <spring-security.version>6.5.3</spring-security.version> <!-- sync with version used by spring-boot-->
         <hibernate.version>6.4.10.Final</hibernate.version>
-        <hibernate-validator.version>8.0.2.Final</hibernate-validator.version>
+        <hibernate-validator.version>8.0.3.Final</hibernate-validator.version>
         <postgresql.driver.version>42.7.7</postgresql.driver.version>
         <flyway.version>10.22.0</flyway.version>
         <solr.client.version>8.11.4</solr.client.version>
@@ -38,7 +38,7 @@
         <jaxb-runtime.version>4.0.5</jaxb-runtime.version>
         <jcache-version>1.1.1</jcache-version>
         <!-- NOTE: Jetty needed for Solr, Handle Server & tests -->
-        <jetty.version>9.4.57.v20241219</jetty.version>
+        <jetty.version>9.4.58.v20250814</jetty.version>
         <log4j.version>2.25.1</log4j.version>
         <pdfbox-version>3.0.5</pdfbox-version>
         <rome.version>1.19.0</rome.version>
@@ -1504,7 +1504,7 @@
             <dependency>
                 <groupId>commons-cli</groupId>
                 <artifactId>commons-cli</artifactId>
-                <version>1.9.0</version>
+                <version>1.10.0</version>
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
