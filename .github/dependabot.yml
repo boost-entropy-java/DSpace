@@ -149,7 +149,7 @@ updates:
         update-types: ["version-update:semver-major"]
   # Also automatically update all our GitHub actions on the main branch
   - package-ecosystem: "github-actions"
-    directories: "/"
+    directory: "/"
     # Monthly dependency updates
     schedule:
       interval: "monthly"
@@ -301,7 +301,7 @@ updates:
         update-types: [ "version-update:semver-major" ]
   # Also automatically update all our GitHub actions on the dspace-9_x branch
   - package-ecosystem: "github-actions"
-    directories: "/"
+    directory: "/"
     target-branch: dspace-9_x
     # Monthly dependency updates
     schedule:
@@ -454,7 +454,7 @@ updates:
         update-types: [ "version-update:semver-major" ]
   # Also automatically update all our GitHub actions on the dspace-8_x branch
   - package-ecosystem: "github-actions"
-    directories: "/"
+    directory: "/"
     target-branch: dspace-8_x
     # Monthly dependency updates
     schedule:
@@ -626,7 +626,7 @@ updates:
         update-types: [ "version-update:semver-major" ]
   # Also automatically update all our GitHub actions on the dspace-7_x branch
   - package-ecosystem: "github-actions"
-    directories: "/"
+    directory: "/"
     target-branch: dspace-7_x
     # Monthly dependency updates
     schedule:
