@@ -39,6 +39,7 @@ import java.util.UUID;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.dspace.app.customurl.consumer.CustomUrlConsumerConfig;
 import org.dspace.app.rest.model.CollectionRest;
 import org.dspace.app.rest.model.ItemRest;
 import org.dspace.app.rest.model.MetadataValueRest;
@@ -66,6 +67,7 @@ import org.dspace.external.OrcidRestConnector;
 import org.dspace.external.provider.impl.OrcidV3AuthorDataProvider;
 import org.dspace.services.ConfigurationService;
 import org.dspace.util.UUIDUtils;
+import org.dspace.utils.DSpace;
 import org.dspace.xmlworkflow.storedcomponents.PoolTask;
 import org.dspace.xmlworkflow.storedcomponents.service.PoolTaskService;
 import org.junit.Test;
@@ -1304,6 +1306,47 @@ public class CrisConsumerIT extends AbstractControllerIntegrationTest {
         // check that the entity type equals to the entity type of the owning collection
         assertThat(itemService.getEntityType(context.reloadEntity(wsitem.getItem())), is("Publication"));
     }
+
+
+    @Test
+    public void testPublicationSubmissionWithCustomUrl() throws Exception {
+
+        context.turnOffAuthorisationSystem();
+
+        // Create a publication collection
+        Collection publications = CollectionBuilder.createCollection(context, parentCommunity)
+                                                   .withName("Publications Collection")
+                                                   .withEntityType("Publication")
+                                                   .build();
+
+        WorkspaceItem wsitem = WorkspaceItemBuilder.createWorkspaceItem(context, publications)
+                                                   .withTitle("Submission Item")
+                                                   .withIssueDate("2017-10-17")
+                                                   .withFulltext("simple-article.pdf", "/local/path/simple-article.pdf",
+                                                                 InputStream.nullInputStream())
+                                                   .withAuthor("Mario Rossi")
+                                                   .withAuthorAffilitation("4Science")
+                                                   .withEditor("Mario Rossi")
+                                                   .grantLicense()
+                                                   .build();
+
+        new DSpace().getSingletonService(CustomUrlConsumerConfig.class).reload();
+
+        context.restoreAuthSystemState();
+
+        // Configure Publication entity type to use dc.title
+        configurationService.setProperty("dspace.custom-url.consumer.supported-entities", "Publication");
+        configurationService.setProperty("dspace.custom-url.consumer.entity-metadata-mapping.Publication", "dc.title");
+
+
+        String authToken = getAuthToken(submitter.getEmail(), password);
+
+        getClient(authToken).perform(post(BASE_REST_SERVER_URL + "/api/workflow/workflowitems")
+                                         .content("/api/submission/workspaceitems/" + wsitem.getID())
+                                         .contentType(textUriContentType))
+                            .andExpect(status().isCreated());
+    }
+
 
     private ItemRest getItemViaRestByID(String authToken, UUID id) throws Exception {
         MvcResult result = getClient(authToken)
