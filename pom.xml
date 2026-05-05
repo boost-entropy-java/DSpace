@@ -19,15 +19,15 @@
     <properties>
         <!--=== GENERAL / DSPACE-API DEPENDENCIES ===-->
         <java.version>21</java.version>
-        <spring.version>6.2.17</spring.version>
-        <spring-ldap.version>3.3.6</spring-ldap.version>
-        <spring-boot.version>3.5.13</spring-boot.version>
-        <spring-security.version>6.5.9</spring-security.version> <!-- sync with version used by spring-boot-->
+        <spring.version>6.2.18</spring.version>
+        <spring-ldap.version>3.3.7</spring-ldap.version>
+        <spring-boot.version>3.5.14</spring-boot.version>
+        <spring-security.version>6.5.10</spring-security.version> <!-- sync with version used by spring-boot-->
         <hibernate.version>6.4.10.Final</hibernate.version>
         <hibernate-validator.version>8.0.3.Final</hibernate-validator.version>
         <!-- Pin antlr4-runtime to the version required by Hibernate (compiled with ANTLR tool 4.13.0) -->
         <antlr4.version>4.13.0</antlr4.version>
-        <postgresql.driver.version>42.7.10</postgresql.driver.version>
+        <postgresql.driver.version>42.7.11</postgresql.driver.version>
         <flyway.version>10.22.0</flyway.version>
         <solr.client.version>8.11.4</solr.client.version>
 
@@ -1449,13 +1449,6 @@
                 <version>${asm.version}</version>
             </dependency>
 
-            <!-- Solr-core and Postgres disagree on versions of Checker Qual -->
-            <dependency>
-                <groupId>org.checkerframework</groupId>
-                <artifactId>checker-qual</artifactId>
-                <version>3.54.0</version>
-            </dependency>
-
             <!-- Several dependencies disagree on version of GSON including Jena, Google-OAuth-Client
                  and OpenAIRE Broker-Client -->
             <dependency>
@@ -1865,9 +1858,9 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>32.1.3-jre</version>
+                <version>33.6.0-jre</version>
                 <exclusions>
-                    <!-- Use version provided by Solr / Postgres -->
+                    <!-- Use version provided by solr-core -->
                     <exclusion>
                         <groupId>org.checkerframework</groupId>
                         <artifactId>checker-qual</artifactId>
