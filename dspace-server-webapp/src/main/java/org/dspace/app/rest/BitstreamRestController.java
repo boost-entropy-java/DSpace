@@ -249,8 +249,6 @@ public class BitstreamRestController {
         } catch (ClientAbortException ex) {
             log.debug("Client aborted the request before the download was completed. " +
                           "Client is probably switching to a Range request.", ex);
-        } catch (Exception e) {
-            throw e;
         }
         return null;
     }
